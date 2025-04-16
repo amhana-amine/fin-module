@@ -1,0 +1,31 @@
+* 
+  margin: 0
+  padding: 0
+  font-family: Arial, Helvetica, sans-serif
+  box-sizing: border-box
+  
+@import ../../node_modules/bootstrap/scss/functions
+@import ../../node_modules/bootstrap/scss/variables
+
+
+
+$alpha: #2ec3d6
+$beta: #761451
+$orangeColor: #ff8000
+
+
+$colors: ("alpha": $alpha , "beta": $beta, "orange":$orangeColor)
+
+$theme-colors: map-merge($colors , $theme-colors)
+
+@import '../../node_modules/bootstrap/scss/bootstrap'
+
+@import '../../node_modules/bootstrap/dist/css/bootstrap'
+// @import '../../node_modules/bootstrap/dist/js/bootstrap'
+
+@import './module/_variables'
+@import './module/_index'
+@import './module/_about'
+@import './module/_service'
+@import './module/_porfolio'
+@import './module/_blog'
