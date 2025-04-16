@@ -64,6 +64,9 @@ nav {
     
         color: #333;
     }
+    #foot{
+        margin: 500px 0 !important;
+    }
 }
 /* hero-section */
 
@@ -174,9 +177,7 @@ nav {
     border-bottom: 1px solid #333;
 }
 /* cart-contact */
-#zone{
-    /* height: 100vh; */
-}
+
 .titre{
     text-align: center;
 }
@@ -324,6 +325,9 @@ form{
 /* events */
 #carouselExampleSlidesOnly{
     background: url('../images/bg.jpg');
-    height: 100vh;
+    height: 70vh;
     border-radius: 5px;
+}
+body{
+    overflow-x: hidden;
 }
