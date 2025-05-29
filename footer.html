@@ -1,73 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./public/css/app.css">
-    <link rel="stylesheet" href="./public/css/ff.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Us</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <title>Document</title>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .col-left,
+    .col-right {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .why-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      height: 500px;
+      width: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .why-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .why-box p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .more-btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color:#fff ;
+      font-weight: bold;
+      padding: 10px 50px;
+      background-color: #e84545;
+      border-radius: 50px;
+    }
+
+    .more-btn i {
+      margin-left: 8px;
+    }
+    .more-btn:hover{
+        background-color: #fff;
+        color: #e84545;
+    }
+
+    .icon-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .icon-box {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon-box i {
+      font-size: 36px;
+      color: #e84545;
+      margin-bottom: 15px;
+    }
+
+    .icon-box h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .icon-box p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .icon-boxes {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container py-5">
-        <div class="row align-items-stretch g-4">
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="d-flex">
-                    <div>
-                        <i class="bi bi-geo-alt icon text-warning"></i>
-                    </div>
-                    <div>
-                        <h4>Address</h4>
-                        <p>A108 Adam Street</p>
-                        <p>New York, NY 535022</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="d-flex">
-                    <div>
-                        <i class="bi bi-telephone icon text-warning"></i>
-                    </div>
-                    <div>
-                        <h4>contact</h4>
-                        <p>+121212212122</p>
-                        <p>aaaaa@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="d-flex">
-                    <div>
-                        <i class="bi bi-geo-alt icon text-warning"></i>
-                    </div>
-                    <div>
-                        <h4>Address</h4>
-                        <p>A108 Adam Street</p>
-                        <p>New York, NY 535022</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="d-flex">
-                    <div>
-                        <i class="bi bi-clock icon text-warning"></i>
-                    </div>
-                    <div>
-                        <h4>Opening Hours</h4>
-                        <p>Mon-Sat: <span class="text-success">11AM - 23PM</span></p>
-                        <p>Sun: <span class="text-danger">closed</span></p>
-                    </div>
-                </div>
-            </div>
 
+<section id="why-us" class="why-us section">
+  <div class="container">
+    <div class="row">
+
+      <!-- Left Column -->
+      <div class="col-left">
+        <div class="why-box">
+          <h2>Why Choose Yummy</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+          </p>
+          <a href="#" class="more-btn">
+            <span>Learn More</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-right">
+        <div class="icon-boxes">
+
+          <div class="icon-box">
+            <i class="bi bi-clipboard-data"></i>
+            <h4>Corporis voluptates officia eiusmod</h4>
+            <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+          </div>
+
+          <div class="icon-box">
+            <i class="bi bi-gem"></i>
+            <h4>Ullamco laboris ladore lore pan</h4>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          </div>
+
+          <div class="icon-box">
+            <i class="bi bi-inboxes"></i>
+            <h4>Labore consequatur incidid dolore</h4>
+            <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+          </div>
 
         </div>
-    </div>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+</body>
 </html>

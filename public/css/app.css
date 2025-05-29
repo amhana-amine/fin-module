@@ -24514,15 +24514,17 @@ textarea.form-control-lg {
   }
 }
 
-@media (max-width: 767px) {
-  .notice p {
-    display: none;
-  }
-  .navbar-nav {
-    background: #fff;
-    padding: 0 20px;
-  }
-  .nav-link {
-    color: #333;
-  }
+.first {
+  display: none;
+}
+
+.seconde {
+  display: block;
+}
+
+.menuText {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=app.css.map */

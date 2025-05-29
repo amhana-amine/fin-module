@@ -9,72 +9,173 @@
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./public/css/ff.css">
+  <link rel="stylesheet" href="./public/css/fooot.css">
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+
+  .carousel-container {
+    width: 70vw;
+    /* height: 100vh; */
+
+
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel {
+    display: flex;
+    /* height: 60vh; */
+    /* background-color: red; */
+
+
+  }
+
+  .slide {
+    min-width: 100%;
+  }
+
+  button {
+    background-color: rgb(67, 86, 80);
+    border: none;
+    width: 100px;
+    padding: 10px 0;
+    border-radius: 20px;
+    position: absolute;
+    top: 45%;
+    color: white;
+    font-weight: bold;
+
+
+  }
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .prev {
+    left: 10px;
+  }
+</style>
 
 <body>
-  <section id="chefs">
-    <div class="title text-center ">
-      <p class="fs-4 text-orange">team</p>
-      <p class="fs-5">our professional <span class="text-warning text-uppercase ">chefs</span> </p>
-    </div>
-    <div class="container py-5">
-      <div class="row align-items-stretch g-4">
-        <div class="col-md-4 chefs" data-aos="fade-up" data-aos-delay="100">
-          <div class="pic">
-            <img src="./public/images/chefs/chefs-1.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="member-info">
-            <h4> <span>Walter</span> White</h4>
-            <span>Master Chef</span>
-            <div class="social">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
 
-        </div>
-        <div class="col-md-4 chefs" data-aos="fade-up" data-aos-delay="100">
-          <div class="pic">
-            <img src="./public/images/chefs/chefs-2.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="member-info">
-            <h4> <span>Sarah</span> jhonson</h4>
-            <span>Patisserie</span>
-            <div class="social">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-md-4 chefs" data-aos="fade-up" data-aos-delay="100">
-          <div class="pic">
-            <img src="./public/images/chefs/chefs-3.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="member-info">
-            <h4> <span>William</span> anderson</h4>
-            <span>cook </span>
-            <div class="social">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-
-        </div>
+  <div class="carousel-container" id="carousel1">
 
 
+    <div class="carousel">
+      <div class="slide" targetSlide="slideCarousel1">
+        <video controls width="100%" poster="vignette.jpg">
+          <source src="./public/video/Apprendre les animaux de la savane - Apprendre le Français.mp4" type="video/mp4">
+        </video>
+
+      </div>
+      <div class="slide" targetSlide="slideCarousel1">
+        <img src="./public/images/menu/menu-item-1.png" alt="">
+      </div>
+      <div class="slide" targetSlide="slideCarousel1">
+        <img src="./public/images/menu/menu-item-2.png" alt="">
+      </div>
+      <div class="slide" targetSlide="slideCarousel1">
+        <img src="./public/images/menu/menu-item-3.png" alt="">
+      </div>
+      <div class="slide" targetSlide="slideCarousel1">
+        <img src="./public/images/menu/menu-item-4.png" alt="">
+      </div>
+      <div class="slide" targetSlide="slideCarousel1">
+        <img src="./public/images/menu/menu-item-5.png" alt="">
+      </div>
+      <div class="slide" targetSlide="slideCarousel1">
+        <img src="./public/images/menu/menu-item-6.png" alt="">
       </div>
     </div>
 
-  </section>
-
+    <button class="prev" carouselBtn="carousel1">Previous</button>
+    <button class="next" carouselBtn='carousel1'>Next</button>
+  </div>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    let carouselContainers = document.querySelectorAll('.carousel-container')
+
+    let nextBtns = document.querySelectorAll('.next')
+    let prevBtns = document.querySelectorAll('.prev')
+
+
+    let currentIndex = 0
+
+    const slider = (index, myBtn) => {
+
+
+      let target = myBtn.getAttribute('carouselBtn')
+      carouselContainers.forEach(carousel => {
+
+        if (carousel.id === target) {
+
+
+
+          let slides = carousel.querySelectorAll('.slide')
+          let camera = carousel.querySelector('.carousel')
+          console.log(camera);
+
+          if (index >= slides.length) {
+            index = 0
+          } else if (index < 0) {
+            index = slides.length - 1
+          }
+
+          camera.style.transform = `translateX(-${slides[0].clientWidth * index}px)`
+          currentIndex = index
+        }
+
+      })
+
+
+    }
+    const stopAllVideos = () => {
+      document.querySelectorAll('video').forEach(video => {
+        video.pause();
+        video.currentTime = 0; 
+      });
+    };
+
+    nextBtns.forEach(nextBtn => {
+      nextBtn.addEventListener('click', () => {
+        stopAllVideos()
+        slider(currentIndex + 1, nextBtn)
+      })
+    })
+
+    prevBtns.forEach(prevBtn => {
+      prevBtn.addEventListener('click', () => {
+        stopAllVideos()
+        slider(currentIndex - 1, prevBtn)
+      })
+    })
+
+
+
+
+
+  </script>
 </body>
 
 </html>
